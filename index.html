@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="theme-light">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="assets/favicon-32x32.png" />
+    <title>Quantox</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <div class="item-1">
+            <div class="header">
+                <h1 class="title-label">devfinder</h1>
+                <div class="switch-button-wrapper">
+                    <label id="switch" for="toggle-input" class="switch"></label>
+                    <input type="checkbox" name="toggle-input" class="toggle-class" id="toggle-input">
+                    <label class="switch-label-img"><img class="switch-img" /></label>
+                </div>
+            </div>
+            <div class="search">
+                <form id="form" class="form-design" autocomplete="off" novalidate>
+                    <div class="search-input">
+                        <img class="search-img" src="assets/icon-search.svg" alt="Search" />
+                        <input id="username" class="input-username-class" name="username" type="text"
+                            placeholder="Search GitHub username..." required>
+                    </div>
+                    <div class="search-button">
+                        <span class="hidden-error"></span>
+                        <button class="btn-primary" type="submit" id="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-body">
+                <div class="card-image">
+                    <img class="avatar" src="" alt="Avatar" />
+                </div>
+                <div class="title">
+                    <div class="username">
+                        <div class="title-left">
+                            <span class="name">
+                            </span>
+                            <span class="login"></span>
+                        </div>
+                        <span class="date-start">
+                        </span>
+                    </div>
+
+                </div>
+                <div class="card-info">
+                    <div class="bio"></div>
+                    <div class="info-section">
+                        <div>
+                            <span class="info-labels">Repos</span>
+                            <div class="repos info-color"></div>
+                        </div>
+                        <div>
+                            <span class="info-labels">Followers</span>
+                            <div class="followers info-color"></div>
+                        </div>
+                        <div>
+                            <span class="info-labels">Following</span>
+                            <div class="following info-color"></div>
+                        </div>
+                    </div>
+                    <div class="first-row">
+                        <div class="location-class">
+                            <img src="assets/icon-location.svg" alt="Location icon" />
+                            <span class="location"></span>
+                        </div>
+                        <div class="twitter-class">
+                            <img src="assets/icon-twitter.svg" alt="Twitter icon" />
+                            <a href="" class="twitter"></a>
+                        </div>
+                        <div class="website-class">
+                            <img src="assets/icon-website.svg" alt="Website icon" />
+                            <a href="" class="website"></a>
+                        </div>
+                        <div class="company-class">
+                            <img src="assets/icon-company.svg" alt="Company icon" />
+                            <a href="" class="company"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
