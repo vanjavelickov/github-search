@@ -4,12 +4,10 @@ body {
     padding: 0;
     cursor: pointer;
     font-family: 'Space Mono', monospace;
-    /* height: 100%;
-    width: 100%; */
     background-color: var(--color-background);
 }
 
-:root {
+.theme-light {
     --primary: #0079FF;
     --secondary: #697C9A;
     --accent: #4B6A9B;
@@ -18,14 +16,18 @@ body {
     --btn-switch-color: #697C9A;
     --btn-switch-color-hover: #222731;
     --color-background: #F6F8FF;
+    --color-background-card: #FEFEFE;
 }
 
-[data-theme="dark"] {
+.theme-dark {
     --primary: #0079FF;
     --secondary: #FFFFFF;
-    --accent: rgb(20, 29, 47);
+    --accent: #FFFFFF;
     /* #F6F8FF nije dobra boja */
-    --dark-blue: #1E2A47;
+    --light-black: #FFFFFF;
+    --color-background: #141D2F;
+    --color-background-card: #1E2A47;
+    --btn-switch-color-hover: #FFFFFF;
 }
 
 .btn-primary {
@@ -48,11 +50,9 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr); */
     grid-template-columns: minmax(150px, 355px) 1fr minmax(150px, 355px);
     grid-template-rows: minmax(150px, 355px) 1fr minmax(150px, 355px);
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     grid-template-areas: ". . ."
         ". card ."
@@ -85,16 +85,7 @@ body {
     align-self: center;
 }
 
-.switch-button {
-    border: none;
-    cursor: pointer;
-    background-color: white;
-    display: flex;
-    gap: 10px;
-    background-color: var(--color-background);
-}
-
-.button-details {
+.switch {
     text-transform: uppercase;
     font-weight: 700;
     font-style: normal;
@@ -105,11 +96,10 @@ body {
     color: var(--secondary);
 }
 
-
-.switch-button:hover span,
-.switch-button:hover img {
-    color: var(--btn-switch-color-hover);
-    background-color: greenyellow;
+.switch-button-wrapper input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 
@@ -117,7 +107,7 @@ body {
 
 .search {
     border-radius: 15px;
-    background-color: white;
+    background-color: var(--color-background-card);
 }
 
 .form-design {
@@ -163,6 +153,8 @@ body {
     font-style: normal;
     font-size: 18px;
     line-height: 25px;
+    background-color: var(--color-background-card);
+    color: var(--btn-switch-color-hover);
 }
 
 ::-webkit-input-placeholder {
@@ -179,22 +171,27 @@ input:focus {
 
 /* CARD BODY  */
 
-
 .card-body {
-    display: flex;
-    flex-direction: column;
     border-radius: 15px;
-    background-color: white;
-    justify-content: space-around;
+    background-color: var(--color-background-card);
     font-family: 'Space Mono', monospace;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 35% 65%;
+    grid-template-areas:
+        "img title"
+        ". info"
+    ;
 }
 
-.card-header {
-    display: flex;
-    justify-content: space-around;
-}
+.card-header {}
 
-.card-image {}
+.card-image {
+    grid-area: img;
+    justify-self: center;
+    margin-top: 10px;
+    flex: 1 1 117px;
+}
 
 .avatar {
     max-width: 117px;
@@ -204,10 +201,11 @@ input:focus {
 
 
 .title {
-    align-self: center;
     display: flex;
     flex-direction: column;
-    flex: 0 0 65%;
+    justify-content: space-around;
+    grid-area: title;
+    margin-right: 10px;
 }
 
 .username {
@@ -216,10 +214,8 @@ input:focus {
 }
 
 .title-left {
-    align-self: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .bio {
@@ -247,16 +243,17 @@ input:focus {
 }
 
 
-
 /* INFO CARD */
 .card-info {
-    align-self: center;
+    grid-area: info;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-right: 10px;
 }
 
 .info-section {
+    border-radius: 10px;
     background-color: var(--color-background);
     display: flex;
     justify-content: space-around;
@@ -281,10 +278,38 @@ input:focus {
     line-height: 33px;
 }
 
-.first-row,
-.second-row {
-    display: flex;
-    justify-content: space-between;
+.first-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "loc tw"
+        "wb com";
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.location-class {
+    grid-area: loc;
+}
+
+.location,
+.twitter,
+.website,
+.company {
+    color: var(--accent);
+}
+
+.twitter-class {
+    grid-area: tw;
+}
+
+.website-class {
+    grid-area: wb;
+}
+
+.company-class {
+    grid-area: com;
 }
 
 @media only screen and (max-width: 408px) {}

@@ -33,6 +33,7 @@ function initialize() {
     company = containerDiv.getElementsByClassName('company')[0];
     errorDiv = containerDiv.getElementsByClassName('hidden-error')[0];
     fetchAllData(initialUsername);
+    checkTheme();
 }
 
 
@@ -105,4 +106,37 @@ function drawUser(response) {
     }
 }
 
+function toggleTheme() {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-light');
+        drawIconToggle('dark', 'assets/icon-moon.svg');
+    } else {
+        setTheme('theme-dark');
+        drawIconToggle('light', 'assets/icon-sun.svg');
+    }
+}
 
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+}
+
+function checkTheme() {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+        document.getElementById('toggle-input').checked = false;
+        drawIconToggle('light', 'assets/icon-sun.svg');
+    } else {
+        setTheme('theme-light');
+        document.getElementById('toggle-input').checked = true;
+        drawIconToggle('dark', 'assets/icon-moon.svg')
+    }
+};
+
+function drawIconToggle(name, iconUrl) {
+    document.getElementById('switch').innerHTML = name
+    let img = document.createElement('img');
+    img.src = iconUrl;
+    document.getElementById('switch').appendChild(img);
+
+}

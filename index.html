@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-light">
 
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,9 @@
             <div class="header">
                 <h1 class="title-label">devfinder</h1>
                 <div class="switch-button-wrapper">
-                    <button class="switch-button" type="button" onclick="switchTheme(event)"><span
-                            class="button-details">dark</span>
-                        <img class="moon" src="assets/icon-moon.svg" alt="Moon icon" />
-                    </button>
+                    <label id="switch" for="toggle-input" class="switch"></label>
+                    <input type="checkbox" name="toggle-input" onchange="toggleTheme()" id="toggle-input">
+                    <label class="switch-label-img"><img class="switch-img"/></label>
                 </div>
             </div>
             <div class="search">
@@ -40,22 +39,20 @@
                 </form>
             </div>
             <div class="card-body">
-                <div class="card-header">
-                    <div class="card-image">
-                        <img class="avatar" src="" alt="Avatar" />
-                    </div>
-                    <div class="title">
-                        <div class="username">
-                            <div class="title-left">
-                                <span class="name">
-                                </span>
-                                <span class="login"></span>
-                            </div>
-                            <span class="date-start">
+                <div class="card-image">
+                    <img class="avatar" src="" alt="Avatar" />
+                </div>
+                <div class="title">
+                    <div class="username">
+                        <div class="title-left">
+                            <span class="name">
                             </span>
+                            <span class="login"></span>
                         </div>
-                        <div class="bio"></div>
+                        <span class="date-start">
+                        </span>
                     </div>
+                    <div class="bio"></div>
                 </div>
                 <div class="card-info">
                     <div class="info-section">
@@ -73,21 +70,21 @@
                         </div>
                     </div>
                     <div class="first-row">
-                        <div>
+                        <div class="location-class">
                             <img src="assets/icon-location.svg" alt="Location icon" />
                             <span class="location"></span>
                         </div>
-                        <div>
+                        <div class="twitter-class">
                             <img src="assets/icon-twitter.svg" alt="Twitter icon" />
                             <span class="twitter"></span>
                         </div>
-                    </div>
-                    <div class="second-row">
-                        <div>
+                        <!-- </div>
+                    <div class="second-row"> -->
+                        <div class="website-class">
                             <img src="assets/icon-website.svg" alt="Website icon" />
                             <span class="website"></span>
                         </div>
-                        <div>
+                        <div class="company-class">
                             <img src="assets/icon-company.svg" alt="Company icon" />
                             <span class="company"></span>
                         </div>
