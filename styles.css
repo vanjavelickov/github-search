@@ -28,12 +28,30 @@ body {
     --dark-blue: #1E2A47;
 }
 
+.btn-primary {
+    font-family: 'Space Mono', monospace;
+    background: var(--primary);
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 0px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    padding-top: 11px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
 .container {
     display: grid;
     justify-content: center;
     align-content: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); */
+    grid-template-columns: minmax(150px, 355px) 1fr minmax(150px, 355px);
+    grid-template-rows: minmax(150px, 355px) 1fr minmax(150px, 355px);
     width: 100vw;
     height: 100vh;
     grid-template-areas: ". . ."
@@ -43,11 +61,13 @@ body {
 
 .item-1 {
     grid-area: card;
-    min-width: 730px;
     display: flex;
     flex-direction: column;
     gap: 18px;
+    flex-basis: 730px;
 }
+
+/* HEADER CLASSES */
 
 .header {
     display: flex;
@@ -93,8 +113,9 @@ body {
 }
 
 
+/* SEARCH CLASSES */
 
-.search-field {
+.search {
     border-radius: 15px;
     background-color: white;
 }
@@ -104,7 +125,7 @@ body {
     justify-content: space-around;
 }
 
-.left-search {
+.search-input {
     margin-top: 22px;
     margin-bottom: 22px;
     display: flex;
@@ -117,7 +138,7 @@ body {
     align-self: center;
 }
 
-.right-search {
+.search-button {
     margin-top: 22px;
     margin-bottom: 22px;
     align-self: flex-end;
@@ -156,56 +177,40 @@ input:focus {
     align-self: center;
 }
 
-.btn-primary {
-    font-family: 'Space Mono', monospace;
-    background: var(--primary);
-    color: white;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 0px;
-    text-align: center;
-    white-space: nowrap;
-    font-weight: bold;
-    padding-top: 11px;
-    padding-bottom: 12px;
-    padding-left: 24px;
-    padding-right: 24px;
-}
+/* CARD BODY  */
+
 
 .card-body {
     display: flex;
+    flex-direction: column;
     border-radius: 15px;
     background-color: white;
     justify-content: space-around;
-    gap: 30px;
     font-family: 'Space Mono', monospace;
 }
 
-.card-image {
-    align-self: flex-start;
+.card-header {
+    display: flex;
+    justify-content: space-around;
 }
+
+.card-image {}
 
 .avatar {
     max-width: 117px;
     max-height: 117px;
     border-radius: 50%;
-    margin-top: 20px;
-
-    /* flex: 1 0 40%; */
 }
 
-.card-info {
+
+.title {
     align-self: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    /* margin-top: 20px; */
-    /* margin-bottom: 20px; */
-
-    flex: 0 0 60%;
+    flex: 0 0 65%;
 }
 
-.title-of-the-card {
+.username {
     display: flex;
     justify-content: space-between;
 }
@@ -217,7 +222,11 @@ input:focus {
     justify-content: center;
 }
 
-.title-left-name {
+.bio {
+    color: var(--accent);
+}
+
+.name {
     color: var(--light-black);
     font-style: normal;
     font-weight: bold;
@@ -225,12 +234,11 @@ input:focus {
     line-height: 39px;
 }
 
-.title-left-login {
+.login {
     color: var(--primary);
 }
 
-.title-right {
-    margin-top: 10px;
+.date-start {
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -238,8 +246,14 @@ input:focus {
     color: var(--secondary);
 }
 
-.bio {
-    color: var(--accent);
+
+
+/* INFO CARD */
+.card-info {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .info-section {
@@ -272,3 +286,5 @@ input:focus {
     display: flex;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 408px) {}

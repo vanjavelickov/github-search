@@ -20,48 +20,56 @@
             <div class="header">
                 <h1 class="title-label">devfinder</h1>
                 <div class="switch-button-wrapper">
-                    <button class="switch-button" type="button" onclick="switchTheme(event)"><span class="button-details">dark</span>
+                    <button class="switch-button" type="button" onclick="switchTheme(event)"><span
+                            class="button-details">dark</span>
                         <img class="moon" src="assets/icon-moon.svg" alt="Moon icon" />
                     </button>
                 </div>
             </div>
-            <div class="search-field">
+            <div class="search">
                 <form id="form" class="form-design" onsubmit="getUserDetails()" autocomplete="off" novalidate>
-                    <div class="left-search">
+                    <div class="search-input">
                         <img class="search-img" src="assets/icon-search.svg" alt="Search" />
                         <input id="username" class="input-username-class" name="username" type="text"
                             placeholder="Search GitHub username..." required>
                     </div>
-                    <div class="right-search">
+                    <div class="search-button">
                         <span class="hidden-error"></span>
                         <button class="btn-primary" type="submit" id="submit">Search</button>
                     </div>
                 </form>
             </div>
             <div class="card-body">
-                <div class="card-image">
-                    <img class="avatar" src="" alt="Avatar" />
+                <div class="card-header">
+                    <div class="card-image">
+                        <img class="avatar" src="" alt="Avatar" />
+                    </div>
+                    <div class="title">
+                        <div class="username">
+                            <div class="title-left">
+                                <span class="name">
+                                </span>
+                                <span class="login"></span>
+                            </div>
+                            <span class="date-start">
+                            </span>
+                        </div>
+                        <div class="bio"></div>
+                    </div>
                 </div>
                 <div class="card-info">
-                    <div class="title-of-the-card">
-                        <div class="title-left">
-                            <span class="title-left-name">
-                            </span>
-                            <span class="title-left-login"></span>
-                        </div>
-                        <span class="title-right">
-                        </span>
-                    </div>
-                    <div class="bio"></div>
                     <div class="info-section">
                         <div>
-                            <span class="info-labels">Repos</span><div class="repos info-color"></div>
+                            <span class="info-labels">Repos</span>
+                            <div class="repos info-color"></div>
                         </div>
                         <div>
-                            <span class="info-labels">Followers</span><div class="followers info-color"></div>
+                            <span class="info-labels">Followers</span>
+                            <div class="followers info-color"></div>
                         </div>
                         <div>
-                            <span class="info-labels">Following</span><div class="following info-color"></div>
+                            <span class="info-labels">Following</span>
+                            <div class="following info-color"></div>
                         </div>
                     </div>
                     <div class="first-row">
@@ -90,4 +98,5 @@
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>

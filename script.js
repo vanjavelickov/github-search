@@ -2,8 +2,8 @@ const initialUsername = 'octocat';
 let containerDiv;
 let imgIcon;
 let titleLeftName;
-let leftSubTitle;
-let titleRight;
+let login;
+let dateStart;
 let bio;
 let repos;
 let followers;
@@ -20,9 +20,9 @@ function initialize() {
     themeSwitch = document.getElementsByClassName('checkbox');
     containerDiv = document.getElementById('container');
     imgIcon = containerDiv.getElementsByClassName('avatar')[0];
-    titleLeftName = containerDiv.getElementsByClassName('title-left-name')[0];
-    leftSubTitle = containerDiv.getElementsByClassName('title-left-login')[0];
-    titleRight = containerDiv.getElementsByClassName('title-right')[0];
+    titleLeftName = containerDiv.getElementsByClassName('name')[0];
+    login = containerDiv.getElementsByClassName('login')[0];
+    dateStart = containerDiv.getElementsByClassName('date-start')[0];
     bio = containerDiv.getElementsByClassName('bio')[0];
     repos = containerDiv.getElementsByClassName('repos')[0];
     followers = containerDiv.getElementsByClassName('followers')[0];
@@ -45,14 +45,13 @@ function fetchAllData(username) {
                     return;
                 }
                 response.json().then(function (response) {
-                    console.log(response)
                     errorDiv.innerHTML = ''
                     drawUser(response);
                 });
             }
         )
         .catch(function (err) {
-            console.log('Fetch Error :-S', err);
+            console.log('Error:', err);
         });
 
 }
@@ -66,15 +65,14 @@ function getUserDetails() {
 }
 
 function drawUser(response) {
-    // console.log(response)
     if (response.name === null) {
         titleLeftName.innerHTML = response.login;
     } else {
         titleLeftName.innerHTML = response.name;
     }
-    leftSubTitle.innerHTML = '@' + response.login;
+    login.innerHTML = '@' + response.login;
     let dateFromResponse = new Date(response.created_at).toDateString().substr(4, 15);
-    titleRight.innerHTML = 'Joined ' + dateFromResponse;
+    dateStart.innerHTML = 'Joined ' + dateFromResponse;
 
     if (response.bio === null) {
         bio.innerHTML = 'This profile has no bio';
