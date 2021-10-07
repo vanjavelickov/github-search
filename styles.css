@@ -2,7 +2,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    cursor: pointer;
     font-family: 'Space Mono', monospace;
     background-color: var(--color-background);
 }
@@ -31,6 +30,7 @@ body {
 }
 
 .btn-primary {
+    cursor: pointer;
     font-family: 'Space Mono', monospace;
     background: var(--primary);
     color: white;
@@ -50,8 +50,8 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
-    grid-template-columns: minmax(150px, 355px) 1fr minmax(150px, 355px);
-    grid-template-rows: minmax(150px, 355px) 1fr minmax(150px, 355px);
+    grid-template-columns: minmax(50px, 355px) minmax(430px, 1fr) minmax(50px, 355px);
+    grid-template-rows: minmax(50px, 144px) 1fr minmax(50px, 145px);
     /* width: 100vw; */
     height: 100vh;
     grid-template-areas: ". . ."
@@ -60,11 +60,12 @@ body {
 }
 
 .item-1 {
+    justify-self: stretch;
     grid-area: card;
     display: flex;
     flex-direction: column;
     gap: 18px;
-    flex-basis: 730px;
+    /* max-width: 700px; */
 }
 
 /* HEADER CLASSES */
@@ -82,10 +83,13 @@ body {
 }
 
 .switch-button-wrapper {
+    cursor: pointer;
     align-self: center;
 }
 
+
 .switch {
+    cursor: pointer;
     text-transform: uppercase;
     font-weight: 700;
     font-style: normal;
@@ -106,6 +110,7 @@ body {
 /* SEARCH CLASSES */
 
 .search {
+    cursor: pointer;
     border-radius: 15px;
     background-color: var(--color-background-card);
 }
@@ -146,6 +151,7 @@ body {
 }
 
 .input-username-class {
+    cursor: pointer;
     flex-basis: 550px;
     font-family: 'Space Mono', monospace;
     border: none;
@@ -174,10 +180,9 @@ input:focus {
 .card-body {
     border-radius: 15px;
     background-color: var(--color-background-card);
-    font-family: 'Space Mono', monospace;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 25% 75%;
     grid-template-areas:
         "img title"
         ". info"
@@ -189,8 +194,8 @@ input:focus {
 .card-image {
     grid-area: img;
     justify-self: center;
+    align-self: center;
     margin-top: 10px;
-    flex: 1 1 117px;
 }
 
 .avatar {
@@ -211,6 +216,7 @@ input:focus {
 .username {
     display: flex;
     justify-content: space-between;
+    margin-left: 10px;
 }
 
 .title-left {
@@ -250,6 +256,7 @@ input:focus {
     flex-direction: column;
     justify-content: space-around;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 .info-section {
@@ -257,8 +264,10 @@ input:focus {
     background-color: var(--color-background);
     display: flex;
     justify-content: space-around;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .info-labels {
@@ -276,16 +285,17 @@ input:focus {
     font-weight: bold;
     font-size: 22px;
     line-height: 33px;
+    text-align: center;
 }
 
 .first-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 63% 37%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "loc tw"
         "wb com";
-    gap: 10px;
+    /* row-gap: 3px; */
     margin-top: 10px;
 }
 
@@ -297,6 +307,7 @@ input:focus {
 .twitter,
 .website,
 .company {
+    font-size: 15px;
     color: var(--accent);
 }
 
@@ -312,4 +323,105 @@ input:focus {
     grid-area: com;
 }
 
-@media only screen and (max-width: 408px) {}
+@media only screen and (max-width: 1281px) {
+    .card-body {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 25% 75%;
+        grid-template-areas:
+            "img title"
+            "info info"
+        ;
+    }
+
+    .username {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-image {
+        align-self: center;
+    }
+
+    .avatar {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .input-username-class {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 437px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "card";
+    }
+
+    .input-username-class {
+        font-size: 13px;
+    }
+
+    .name {
+        font-size: 13px;
+        line-height: 23.7px;
+    }
+
+    .date-start {
+        font-size: 13px;
+        line-height: 19.25px;
+    }
+
+    .info-labels {
+        font-size: 11px;
+        line-height: 16.29px;
+    }
+
+    .info-color {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .location,
+    .twitter,
+    .website,
+    .company {
+        font-size: 13px;
+    }
+
+    .card-image {
+        margin-top: 6px;
+        align-self: start;
+    }
+
+    .card-info {
+        justify-content: start;
+    }
+
+    .title {
+        align-self: start;
+        justify-self: center;
+        margin-top: 6px;
+    }
+
+    .card-body {
+        grid-template-rows: minmax(150px, 200px) minmax(340px, 450px);
+        grid-template-columns: 25% 75%;
+        grid-template-areas:
+            "img title"
+            "info info"
+        ;
+    }
+
+    .first-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 35px 35px 35px 35px;
+        grid-template-areas:
+            "loc"
+            "wb"
+            "tw"
+            "com";
+    }
+}
