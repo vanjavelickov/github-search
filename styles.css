@@ -11,7 +11,6 @@ body {
     --secondary: #697C9A;
     --accent: #4B6A9B;
     --light-black: #2B3442;
-    /* --font-color: #000000; */
     --btn-switch-color: #697C9A;
     --btn-switch-color-hover: #222731;
     --color-background: #F6F8FF;
@@ -22,7 +21,6 @@ body {
     --primary: #0079FF;
     --secondary: #FFFFFF;
     --accent: #FFFFFF;
-    /* #F6F8FF nije dobra boja */
     --light-black: #FFFFFF;
     --color-background: #141D2F;
     --color-background-card: #1E2A47;
@@ -52,7 +50,6 @@ body {
     align-content: center;
     grid-template-columns: minmax(50px, 355px) minmax(430px, 1fr) minmax(50px, 355px);
     grid-template-rows: minmax(50px, 144px) 1fr minmax(50px, 145px);
-    /* width: 100vw; */
     height: 100vh;
     grid-template-areas: ". . ."
         ". card ."
@@ -65,7 +62,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    /* max-width: 700px; */
 }
 
 /* HEADER CLASSES */
@@ -249,7 +245,8 @@ input:focus {
 }
 
 
-/* INFO CARD */
+/* CARD INFO */
+
 .card-info {
     grid-area: info;
     display: flex;
@@ -295,7 +292,6 @@ input:focus {
     grid-template-areas:
         "loc tw"
         "wb com";
-    /* row-gap: 3px; */
     margin-top: 10px;
 }
 
@@ -309,6 +305,7 @@ input:focus {
 .company {
     font-size: 15px;
     color: var(--accent);
+    text-decoration: none;
 }
 
 .twitter-class {
